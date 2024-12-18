@@ -1,0 +1,69 @@
+{
+  "name": "limit-guardian",
+  "version": "1.0.0",
+  "description": "API rate limit guardian",
+  "main": "dist/src/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "worker-ui": "tsx src/worker-ui.ts",
+    "build": "tsc",
+    "serve": "node dist/src/index.js",
+    "cli": "tsx src/cli.ts",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "studio": "prisma studio",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "migrate:reset": "prisma migrate reset",
+    "generate": "prisma generate",
+    "seed": "tsx prisma/scripts/seed.ts",
+    "dev": "tsx --watch src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "rate-limit",
+    "api",
+    "guardian",
+    "monitor",
+    "worker",
+    "queue",
+    "bullmq",
+    "bull-board",
+    "limit"
+  ],
+  "author": "loumonthjack",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.11.2",
+    "@bull-board/express": "^6.5.3",
+    "@graphql-tools/load-files": "^7.0.0",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@prisma/client": "^6.0.1",
+    "bullmq": "^5.34.2",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "cuid": "^3.0.0",
+    "express": "^4.21.2",
+    "graphql": "^16.10.0",
+    "graphql-codegen": "^0.4.0",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.3",
+    "@graphql-codegen/schema-ast": "^4.1.0",
+    "@graphql-codegen/typescript": "^4.1.1",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/nodemailer": "^6.4.17",
+    "i": "^0.3.7",
+    "npm": "^11.0.0",
+    "prisma": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

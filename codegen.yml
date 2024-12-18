@@ -1,0 +1,6 @@
+overwrite: true
+schema: "limit-monitor/schema.graphql"
+generates:
+  limit-monitor/graphql.types.ts:
+    plugins:
+      - "typescript"

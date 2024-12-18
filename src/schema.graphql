@@ -1,0 +1,30 @@
+type Query {
+  services: [Service!]!
+  service(name: String!): Service
+}
+
+type Mutation {
+    newService(name: String!, description: String!, isEnabled: Boolean!, rateLimitPeriod: RateLimitPeriod!, rateLimit: Int!, adminEmail: String!): Service
+}
+
+type Service {
+  name: String!
+  description: String
+  isEnabled: Boolean!
+  limit: Int!
+  period: RateLimitPeriod!
+  usage: Int!
+  resetAt: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+enum RateLimitPeriod {
+  SECOND
+  MINUTE
+  HOUR
+  DAY
+  WEEK
+  MONTH
+  YEAR
+}

@@ -1,0 +1,38 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "sqlite"
+  url      = "file:./data/dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Service {
+  id              String    @id @default(cuid())
+  name            String    @unique
+  description     String?
+  isEnabled       Boolean   @default(true) @map("is_enabled")
+  rateLimitPeriod String    @map("rate_limit_period")
+  rateLimit       Int       @default(0) @map("rate_limit")
+  currentUsage    Int       @default(0) @map("current_usage")
+  resetAt         DateTime  @map("reset_at")
+  adminEmail      String    @map("admin_email")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime?  @updatedAt @map("updated_at")
+  lastNotified    DateTime? @map("last_notified")
+}
+
+
+//  {
+//    name: "mapbox-geocode-api",
+//    description: "Mapbox Geocode API",
+//    isEnabled: true,
+//    rateLimitPeriod: "monthly",
+//    rateLimit: 250000,
+//    currentUsage: 13,
+//    resetAt: "2025-01-01T00:00:00.000Z",
+//    adminEmail: "loumonth.jack.jr@gmail.com",
+//    createdAt: "2024-10-01T00:00:00.000Z",
+//    updatedAt: "2024-12-16T00:00:00.000Z",
+//  }
