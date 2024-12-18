@@ -1,5 +1,5 @@
 import prisma from "../client";
-import { Service } from "../prisma.types";
+import { Service } from "../types";
 import { createId } from "@paralleldrive/cuid2";
 
 const main = async () => {

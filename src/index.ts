@@ -1,5 +1,5 @@
-import startMonitor from "./worker";
-// import startServer from "./server";
+import startMonitor from "./interfaces/worker";
+// import startServer from "./interfaces/server";
 
 const main = async () => {
   try {
@@ -12,5 +12,5 @@ const main = async () => {
 };
 
 main();
-export { Guardian } from "./guardian.class";
-export type { GuardianConfig, GuardianError } from "./types";
+export { Guardian } from "./main/guardian.class";
+export type { GuardianConfig, GuardianError } from "./main/types";

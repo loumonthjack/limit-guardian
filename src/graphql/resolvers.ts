@@ -1,6 +1,6 @@
-import { MutationNewServiceArgs, QueryServiceArgs, RateLimitPeriod } from "./graphql.types";
-import ServiceManager from "./model";
-import { getResetDate, getRateLimitPeriod } from "./helpers";
+import { MutationNewServiceArgs, QueryServiceArgs, RateLimitPeriod } from "./types";
+import ServiceManager from "../model";
+import { getResetDate, getRateLimitPeriod } from "../helpers";
 
 export default {
   Query: {
@@ -13,7 +13,6 @@ export default {
   },
   Mutation: {
     newService: async (_: void, args: MutationNewServiceArgs) => {
-        // remove spaces from name, replave with dash
         const name = args.name.replace(/\s+/g, '-').toLowerCase();
         args.name = name;
 

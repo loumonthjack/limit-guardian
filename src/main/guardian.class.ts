@@ -1,8 +1,8 @@
 import { GuardianConfig, GuardianError } from "./types";
-import ServiceManager from "./model";
-import { getResetDate } from "./helpers";
-import { RateLimitPeriod } from "./graphql.types";
-import { sendEmail, formatLimitWarningEmail } from "./services/email";
+import ServiceManager from "../model";
+import { getResetDate } from "../helpers";
+import { RateLimitPeriod } from "../graphql/types";
+import { sendEmail, formatLimitWarningEmail } from "../services/email";
 import { Prisma } from "@prisma/client";
 
 export class Guardian {
@@ -33,7 +33,6 @@ export class Guardian {
         });
       }
       
-      // If service exists, update its configuration
       return await ServiceManager.update({
         name,
         data: {
@@ -148,9 +147,9 @@ export class Guardian {
     }
   }
 
-  async protect(
+  async protect<T>(
     name: string,
-    callable: any, // I know this is bad, but it's a workaround for the fact that I can't type the callable
+    callable: T,
     config: GuardianConfig,
   ) {
     await this.ensureService(name, config);

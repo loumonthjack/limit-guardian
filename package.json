@@ -8,10 +8,10 @@
   ],
   "scripts": {
     "start": "tsx src/index.ts",
-    "worker-ui": "tsx src/worker-ui.ts",
+    "worker-ui": "tsx src/interfaces/worker-ui.ts",
     "build": "tsc",
     "serve": "node dist/src/index.js",
-    "cli": "tsx src/cli.ts",
+    "cli": "tsx src/interfaces/cli.ts",
     "codegen": "graphql-codegen --config codegen.yml",
     "studio": "prisma studio",
     "migrate": "prisma migrate dev",

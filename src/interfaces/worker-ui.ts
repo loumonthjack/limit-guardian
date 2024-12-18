@@ -3,7 +3,7 @@ import { BullMQAdapter } from '@bull-board/api/bullMQAdapter';
 import { ExpressAdapter } from '@bull-board/express';
 import { Queue } from 'bullmq';
 import express from 'express';
-import env from './env';
+import env from '../env';
 
 const app = express();
 

@@ -1,6 +1,6 @@
 # Limit Guardian
 
-A TypeScript library for monitoring and enforcing API rate limits. Features CLI tools and real-time monitoring to help prevent excessive API usage and control costs. Built with scalability and reliability in mind using modern Node.js practices.
+A TypeScript library for monitoring and enforcing API rate limits. Features CLI tools and real-time monitoring to help prevent excessive API usage and control costs.
 
 ## Features
 
@@ -52,20 +52,24 @@ import { Guardian, GuardianConfig } from "limit-guardian";
 const guardian = Guardian.getInstance();
 
 // Create a protected API call
-const fetchData = async () => {
-  return await guardian.protect(
-    "openai-api",
-    async () => {
-      // Your API call here
-      return await fetch("https://api.openai.com/v1/chat/completions");
-    },
+const fetchAnthropicData = async () => {
+  const guardedAnthropic = await guardian.protect(
+    "anthropic",
+    await anthropic.messages.create({
+      model: "claude-3-5-sonnet-latest",
+      max_tokens: maxTokens,
+      messages: [{ role: "user", content }],
+    }),
     {
       interval: "minute",
-      limit: 100,
+      limit: 10,
       strict: true,
       to: "admin@example.com"
-    }
+    },
   );
+  const messages = await guardedAnthropic;
+  const [response] = messages.content;
+  return response.text;
 };
 
 // Using with a wrapper function

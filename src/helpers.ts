@@ -1,5 +1,5 @@
-import { RateLimitPeriod } from "../prisma/prisma.types";
-import { RateLimitPeriod as RateLimitPeriodEnum } from "./graphql.types";
+import { RateLimitPeriod } from "../prisma/types";
+import { RateLimitPeriod as RateLimitPeriodEnum } from "./graphql/types";
 
 export const MILLISECONDS = {
   SECOND: 1_000,

@@ -1,8 +1,8 @@
 import { Queue, Worker } from "bullmq";
 import IORedis from "ioredis";
-import env from "./env";
-import ServiceManager from "./model";
-import { calculateCronPattern, getResetDate } from "./helpers";
+import env from "../env";
+import ServiceManager from "../model";
+import { calculateCronPattern, getResetDate } from "../helpers";
 
 const createRedisConnection = () => new IORedis({
   host: env.REDIS_HOST,

@@ -22,17 +22,3 @@ model Service {
   updatedAt       DateTime?  @updatedAt @map("updated_at")
   lastNotified    DateTime? @map("last_notified")
 }
-
-
-//  {
-//    name: "mapbox-geocode-api",
-//    description: "Mapbox Geocode API",
-//    isEnabled: true,
-//    rateLimitPeriod: "monthly",
-//    rateLimit: 250000,
-//    currentUsage: 13,
-//    resetAt: "2025-01-01T00:00:00.000Z",
-//    adminEmail: "loumonth.jack.jr@gmail.com",
-//    createdAt: "2024-10-01T00:00:00.000Z",
-//    updatedAt: "2024-12-16T00:00:00.000Z",
-//  }

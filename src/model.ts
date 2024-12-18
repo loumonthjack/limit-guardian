@@ -1,7 +1,7 @@
 import { createId } from "@paralleldrive/cuid2";
 import { Prisma } from "@prisma/client";
 import client from "../prisma/client";
-import { Service } from "../prisma/prisma.types";
+import { Service } from "../prisma/types";
 
 const getServiceByName = async (name: string) => {
     return await client.service.findUnique({ where: { name: name.toLowerCase() } });

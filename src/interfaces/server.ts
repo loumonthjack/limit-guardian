@@ -3,7 +3,7 @@ import { loadFiles, LoadFilesOptions } from "@graphql-tools/load-files";
 import { mergeResolvers } from "@graphql-tools/merge";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 import { startStandaloneServer } from '@apollo/server/standalone';
-import env from "./env";
+import env from "../env";
 
 async function start() {
   const loadOptions: LoadFilesOptions = {

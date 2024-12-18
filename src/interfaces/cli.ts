@@ -1,8 +1,8 @@
 import { Command } from "commander";
-import ServiceManager from "./model";
-import { RateLimitPeriod as RateLimitPeriodEnum } from "./graphql.types";
-import { RateLimitPeriod } from "../prisma/prisma.types";
-import { getResetDate } from "./helpers";
+import ServiceManager from "../model";
+import { RateLimitPeriod as RateLimitPeriodEnum } from "../graphql/types";
+import { RateLimitPeriod } from "../../prisma/types";
+import { getResetDate } from "../helpers";
 
 const program = new Command();
 
