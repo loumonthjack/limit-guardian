@@ -36,9 +36,9 @@ npm install limit-guardian
 npx prisma migrate dev
 ```
 
-2. Start the monitoring service:
+2. Start the worker service (uncomment the startServer function in src/index.ts to start the server):
 ```bash
-npm run monitor
+npm run start
 ```
 
 ## Usage
